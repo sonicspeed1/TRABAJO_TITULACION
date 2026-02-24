@@ -67,7 +67,7 @@ try:
         edges_near = net.getNeighboringEdges(x, y, 500)
 
         if not edges_near:
-            print(f"⚠️ Punto fuera de red: {vehID} | step {step}")
+            print(f"Punto fuera de red: {vehID} | step {step}")
             traci.simulationStep()
             continue
 
@@ -87,7 +87,7 @@ try:
                 matchThreshold=500
             )
         except traci.TraCIException:
-            print(f"⚠️ SUMO no pudo mapear {vehID} | step {step}")
+            print(f" SUMO no pudo mapear {vehID} | step {step}")
             traci.simulationStep()
             continue
 
@@ -120,7 +120,7 @@ try:
         ])
 
 except Exception as e:
-    print(f"❌ Error durante la simulación: {e}")
+    print(f" Error durante la simulación: {e}")
 
 finally:
     # ===============================
@@ -149,5 +149,5 @@ finally:
     )
 
 sumo_df.to_csv("resultados_sumo_final.csv", index=False)
-print("✅ Simulación finalizada (parcial o completa)")
-print("📄 Archivo generado: resultados_sumo_final.csv")
+print("Simulación finalizada (parcial o completa)")
+print("Archivo generado: resultados_sumo_final.csv")

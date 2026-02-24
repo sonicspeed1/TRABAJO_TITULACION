@@ -42,7 +42,7 @@ for vid in veh_ids:
         depart=0
     )
 
-# ⚠️ Avanzar hasta que TODOS existan
+# Avanzar hasta que TODOS existan
 while len(traci.vehicle.getIDList()) < len(veh_ids):
     traci.simulationStep()
 
@@ -145,5 +145,5 @@ sumo_df = pd.DataFrame(
 
 sumo_df.to_csv("resultados_sumo_estable.csv", index=False)
 
-print("✅ Simulación finalizada SIN errores")
-print("📈 Resultados densos listos para graficar")
+print("Simulación finalizada SIN errores")
+print("Resultados densos listos para graficar")
